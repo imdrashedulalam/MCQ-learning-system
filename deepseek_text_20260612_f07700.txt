@@ -1,0 +1,10 @@
+
+## What to Do Next
+
+1. Copy the script above into a file named `setup.sh`.
+2. Make it executable: `chmod +x setup.sh`
+3. Run it: `./setup.sh`
+4. Enter the new directory: `cd pdf-mcq-exam-system`
+5. Initialize Git and push to your GitHub repository.
+
+All diagrams use Mermaid syntax and will render automatically on GitHub. The SQL file can be executed against any PostgreSQL instance. The documentation is comprehensive and ready for your team to start implementation.

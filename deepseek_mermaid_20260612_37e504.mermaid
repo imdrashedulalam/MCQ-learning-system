@@ -1,0 +1,15 @@
+flowchart TD
+    A[Upload PDF] --> B[Extract Q&A, Generate Distractors, Store in DB]
+    B --> C[User clicks Start Exam]
+    C --> D[Server creates attempt, shuffles questions & options]
+    D --> E[Client shows questions WITHOUT correct answers, timer starts 60 min]
+    E --> F{Time expires or User submits}
+    F -->|Time expires| G[Auto-submit answers]
+    F -->|User clicks submit| H[Manual submit]
+    G --> I[Server validates, grades, updates attempt]
+    H --> I
+    I --> J[Return score summary + review data with correct answers]
+    J --> K[User sees result page]
+    K --> L{Action}
+    L -->|Re-Exam| C
+    L -->|View History| M[Attempts list]

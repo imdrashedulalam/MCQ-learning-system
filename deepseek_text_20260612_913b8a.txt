@@ -1,0 +1,6 @@
+DATABASE_URL=postgresql://user:pass@host:5432/examdb
+SECRET_KEY=your-secret-key
+OPENAI_API_KEY=sk-...
+PDF_STORAGE_PATH=s3://your-bucket/pdfs
+CORS_ORIGINS=https://your-frontend.com
+EXAM_DURATION_MINUTES=60

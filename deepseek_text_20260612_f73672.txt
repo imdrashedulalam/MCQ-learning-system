@@ -1,0 +1,14 @@
+backend/
+├── app/
+│   ├── main.py
+│   ├── config.py
+│   ├── models/          # SQLAlchemy/Peewee models
+│   ├── schemas/         # Pydantic schemas
+│   ├── api/             # Route handlers
+│   ├── services/        # PDF parsing, distractor generation, grading
+│   ├── utils/           # Shuffle, security helpers
+│   └── db/
+├── alembic/
+├── tests/
+├── requirements.txt
+└── Dockerfile

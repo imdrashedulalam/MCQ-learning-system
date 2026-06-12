@@ -1,0 +1,15 @@
+pdf-mcq-exam-system/
+├── README.md
+├── docs/
+│   ├── architecture.md
+│   ├── database-er.md
+│   ├── api-design.md
+│   ├── frontend-wireframe.md
+│   ├── exam-flow.md
+│   ├── shuffle-algorithm.md
+│   ├── grading-algorithm.md
+│   ├── folder-structure.md
+│   └── deployment-guide.md
+├── database/
+│   └── schema.sql
+└── .gitignore

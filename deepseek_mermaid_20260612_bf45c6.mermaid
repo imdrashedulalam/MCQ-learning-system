@@ -1,0 +1,63 @@
+erDiagram
+    users ||--o{ exam_attempts : has
+    question_banks ||--|{ questions : contains
+    questions ||--|{ options : has
+    exam_attempts ||--|{ student_responses : records
+    student_responses }o--|| questions : answers
+    exam_attempts }o--|| question_banks : uses
+
+    users {
+        uuid id PK
+        string name
+        string email UK
+        string password_hash
+        timestamp created_at
+    }
+    question_banks {
+        uuid id PK
+        string title
+        uuid created_by FK
+        string pdf_original_name
+        string pdf_storage_path
+        timestamp created_at
+    }
+    questions {
+        uuid id PK
+        uuid bank_id FK
+        text question_text
+        int difficulty
+        jsonb metadata
+    }
+    options {
+        uuid id PK
+        uuid question_id FK
+        string option_label "ক,খ,গ,ঘ"
+        text option_text
+        boolean is_correct
+        int position
+    }
+    exam_attempts {
+        uuid id PK
+        uuid user_id FK
+        uuid bank_id FK
+        int attempt_number
+        timestamp start_time
+        timestamp end_time
+        int score
+        numeric percentage
+        string status
+    }
+    student_responses {
+        uuid id PK
+        uuid attempt_id FK
+        uuid question_id FK
+        uuid selected_option_id FK
+        boolean is_correct
+    }
+    attempt_shuffles {
+        uuid id PK
+        uuid attempt_id FK
+        uuid question_id FK
+        uuid[] shuffled_option_ids
+        string correct_label
+    }
